@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -41,3 +42,7 @@ urlpatterns = [
         name="swagger-ui",
     ),
 ]
+
+# serve static files through a Django view
+# only used for local development (disabled when DEBUG=False)
+urlpatterns += staticfiles_urlpatterns()
