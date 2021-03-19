@@ -41,8 +41,8 @@ mergemigrations:
 	$(POETRY_RUN) $(HONCHO_RUN) makemigrations --merge
 
 db-reset:
-	dropdb -U postgres $(DATABASE_NAME)
-	createdb -U postgres $(DATABASE_NAME)
+	dropdb -U postgres django_rest_boilerplate --if-exists
+	createdb -U postgres django_rest_boilerplate
 
 db: db-reset migrate
 	echo "from django.contrib.auth import get_user_model; get_user_model().objects.create_superuser('admin', 'admin@example.com', 'admin')" | $(POETRY_RUN) $(HONCHO_RUN) shell
