@@ -1,0 +1,1 @@
+web: gunicorn -b "127.0.0.1:8000" -w 4 app.wsgi --graceful-timeout 1

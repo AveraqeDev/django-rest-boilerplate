@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.coverage
+htmlcov/
+*.egg-info/
+
+# Django
+static/
+
+# Environment
+env/
+.envrc
+.env
+.venv/
+
+# macOS Stuff
+.DS_STORE
+
+# Vscode
+.vscode
+
+# Tmp directory for builds
+tmp/
